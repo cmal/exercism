@@ -1,0 +1,13 @@
+#!/bin/bash
+name=$1
+
+if [ -z $name ] ;
+then
+   echo "Provide a name to submit"
+   exit 1
+fi
+
+cd elisp/$name
+exercism submit $name.el
+#exercism fetch elisp
+

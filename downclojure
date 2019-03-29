@@ -1,0 +1,10 @@
+#!/bin/bash
+name=$1
+
+if [ -z $name ] ;
+then
+   echo "Provide an exercise to download"
+   exit 1
+fi
+
+exercism download --exercise=$1 --track=clojure

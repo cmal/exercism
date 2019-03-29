@@ -1,0 +1,12 @@
+#!/bin/bash
+name=$1
+
+if [ -z $name ] ;
+then
+   echo "Provide a name to run test"
+   exit 1
+fi
+
+cd clojure/$name
+lein test
+

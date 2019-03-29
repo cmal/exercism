@@ -1,0 +1,13 @@
+#!/bin/bash
+name=$1
+
+if [ -z $name ] ;
+then
+   echo "Provide a name to run test"
+   exit 1
+fi
+
+emacs=/usr/local/Cellar/emacs/HEAD-dc18a09_1/Emacs.app/Contents/MacOS/Emacs
+
+cd elisp/$name
+$emacs -batch -l ert -l $name-test.el -f ert-run-tests-batch-and-exit
